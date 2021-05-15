@@ -8,7 +8,7 @@ const messageInput = document.getElementById('messageInp')
 const messageContainer = document.querySelector(".container")
 
 //Audio will play pn receiving messages
-var audio = new Audio('notification.mp3')
+var audio = new Audio('notification.mp3');
 
 // function which will append event info to the container
 const append = (message, position)=> {
@@ -38,7 +38,7 @@ socket.on('receive', data=> {
 })
 
 // If a user leaves the charset, append the info to the container
-socket.on('left', data=> {
+socket.on('left', name=> {
     append(`${name} left the chat `,'right')
 })
 
