@@ -1,6 +1,6 @@
 // const { charset } = require("mime-types");
 
-const socket = io('http://localhost:8000');
+const socket = io('http://localhost:3000');
 
 //Get DOM elements in respective Js variables
 const form = document.getElementById('send-container');
@@ -35,12 +35,12 @@ socket.on('user-joined', name=> {
 // If server sends a message, receive it
 socket.on('receive', data=> {
     append(`${data.name}: ${data.message}`,'left')
-})
+}) 
 
-// If a user leaves the charset, append the info to the container
+// If a user leaves  the charset, append the info to the container
 socket.on('left', name=> {
     append(`${name} left the chat `,'right')
-})
+}) 
 
 //If the form gets submitted, send server the message
 form.addEventListener('submit', (e)=> {
